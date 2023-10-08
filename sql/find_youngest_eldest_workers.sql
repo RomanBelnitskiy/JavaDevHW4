@@ -4,7 +4,7 @@ SELECT
       THEN 'YOUNGEST'
       ELSE 'ELDEST'
     END "type",
-    w."name", 
+    w.name,
     w.birthday 
 	FROM worker w
 	WHERE w.birthday = (SELECT MAX(birthday) FROM worker)

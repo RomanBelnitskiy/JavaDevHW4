@@ -1,3 +1,4 @@
+*.db
 .gradle
 gradle
 gradlew

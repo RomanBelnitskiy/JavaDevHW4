@@ -19,7 +19,7 @@ INSERT INTO client(ID, NAME) VALUES
   (5, 'Nvidia'),
   (6, 'Tesla');
 
-INSERT INTO project(ID, CLIENT_ID, "name", START_DATE, FINISH_DATE) VALUES 
+INSERT INTO project(ID, CLIENT_ID, NAME, START_DATE, FINISH_DATE) VALUES
   (1, 2, 'Project 1', '2020-12-01', '2021-05-12'),
   (2, 1, 'Project 2', '2021-05-18', '2023-08-01'),
   (3, 2, 'Project 3', '2021-01-04', '2022-07-01'),
