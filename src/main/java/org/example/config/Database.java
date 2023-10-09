@@ -30,33 +30,6 @@ public class Database {
         return INSTANCE.connection;
     }
 
-    public int executeUpdate(Query query) {
-        if (query.type() != QueryType.UPDATE) {
-            return 0;
-        }
-
-        try (Statement statement = connection.createStatement()) {
-            return statement.executeUpdate(query.sql());
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public <T> List<T> executeSelect(Query query, ResultSetMapper<List<T>> mapper) {
-        if (query.type() != QueryType.SELECT) {
-            return null;
-        }
-
-        try (Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery(query.sql());
-            List<T> result = mapper.apply(resultSet);
-            resultSet.close();
-            return result;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
     public void closeConnection() {
         try {
             connection.close();
